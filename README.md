@@ -24,7 +24,7 @@ yarn add react-native-permissions mitt dayjs
 
 | package name            | version | react-native version |
 | ----------------------- | ------- | -------------------- |
-| react-native-tools-next | 2.1.6+  | 0.65.0+              |
+| react-native-tools-next | 2.1.7+  | 0.65.0+              |
 
 ### Usage
 
@@ -231,4 +231,39 @@ listenForScrolling(); // 4
 listenForScrolling(); // undefined
 listenForScrolling(); // undefined
 listenForScrolling(); // 7
+```
+
+##### calculation
+
+```js
+import {
+  add,
+  subtract,
+  multiply,
+  divide,
+  toFixedNoRound,
+  toFixedRound,
+} from 'react-native-tools-next';
+
+//  0.1+0.2  // 0.30000000000000004
+add(0.1, 0.2); // 0.3
+
+// 0.3-0.1  // 0.19999999999999998
+subtract(0.3, 0.1); // 0.2
+
+// 0.1*0.2  // 0.020000000000000004
+multiply(0.1, 0.2); // 0.02
+
+// 0.3/0.1  // 2.9999999999999996
+divide(0.3, 0.1); // 3
+
+// Gets the specified number of digits, and the result is not rounded.
+// Returns the result of numeric type,
+// which is generally used in conjunction with toFixed to beautify the display effect
+// 0.19999999999999998.toFixed(2)  // '0.20'
+toFixedNoRound(0.19999999999999998, 2); // 0.19
+
+// Get the specified number of digits and round the result.
+// 0.19999999999999998.toFixed(2)  // '0.20'
+toFixedRound(0.19999999999999998, 2); // 0.2
 ```

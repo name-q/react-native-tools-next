@@ -24,7 +24,7 @@ yarn add react-native-permissions mitt dayjs
 
 | 安装包                  | 版本号 | react-native 版本号 |
 | ----------------------- | ------ | ------------------- |
-| react-native-tools-next | 2.1.6+ | 0.65.0+             |
+| react-native-tools-next | 2.1.7+ | 0.65.0+             |
 
 ### 如何使用
 
@@ -225,4 +225,37 @@ listenForScrolling(); // 4
 listenForScrolling(); // undefined
 listenForScrolling(); // undefined
 listenForScrolling(); // 7
+```
+
+##### calculation
+
+```js
+import {
+  add,
+  subtract,
+  multiply,
+  divide,
+  toFixedNoRound,
+  toFixedRound,
+} from 'react-native-tools-next';
+
+//  0.1+0.2  // 0.30000000000000004
+add(0.1, 0.2); // 0.3
+
+// 0.3-0.1  // 0.19999999999999998
+subtract(0.3, 0.1); // 0.2
+
+// 0.1*0.2  // 0.020000000000000004
+multiply(0.1, 0.2); // 0.02
+
+// 0.3/0.1  // 2.9999999999999996
+divide(0.3, 0.1); // 3
+
+// 获取指定位数，结果不四舍五入。返回数字类型结果，一般配合toFixed美化展示效果
+// 0.19999999999999998.toFixed(2)  // '0.20'
+toFixedNoRound(0.19999999999999998, 2); // 0.19
+
+// 获取指定位数，结果四舍五入。
+// 0.19999999999999998.toFixed(2)  // '0.20'
+toFixedRound(0.19999999999999998, 2); // 0.2
 ```
