@@ -12,6 +12,14 @@ import { usePermissions, requestPermissions } from './usePermissions';
 import * as msg from './util/msg';
 import throttle from './util/throttle';
 import debounce from './util/debounce';
+import {
+  add,
+  subtract,
+  multiply,
+  divide,
+  toFixedNoRound,
+  toFixedRound,
+} from './util/calculation';
 
 export {
   useMount,
@@ -29,4 +37,10 @@ export {
   requestPermissions,
   debounce,
   throttle,
+  add,
+  subtract,
+  multiply,
+  divide,
+  toFixedNoRound,
+  toFixedRound,
 };
