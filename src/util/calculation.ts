@@ -79,13 +79,14 @@ function toNumber(num: strOrNum, precision: number): number {
  * toFixedNoRound(0.19999999999999998,2) // 0.19
  * @public
  */
-function toFixedNoRound(num: strOrNum, decimalPlaces: number): number {
+function toFixedNoRound(num: strOrNum, decimalPlaces: number = 0): number {
   const parsedNum = Number(num);
   if (isNaN(parsedNum)) {
     throw new Error('Invalid number input');
   }
   const strNum = parsedNum.toString();
   const dotIndex = strNum.indexOf('.');
+  if (dotIndex === -1) return Number(num);
   const truncatedStrNum = strNum.substring(0, dotIndex + decimalPlaces + 1);
   const truncatedNum = Number(truncatedStrNum);
   return truncatedNum;
@@ -97,7 +98,7 @@ function toFixedNoRound(num: strOrNum, decimalPlaces: number): number {
  * toFixedRound(0.19999999999999998,2) // 0.2
  * @public
  */
-function toFixedRound(num: strOrNum, decimalPlaces: number): number {
+function toFixedRound(num: strOrNum, decimalPlaces: number = 0): number {
   const parsedNum = Number(num);
   if (isNaN(parsedNum)) {
     throw new Error('Invalid number input');
