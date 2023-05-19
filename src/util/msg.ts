@@ -28,9 +28,9 @@ export const off = (key: string) => exist(key) && msg.off(key);
  * Send message to subscription, Returns the boolean value of whether the message was sent successfully
  * @public
  */
-export const emit = (type: string, event: any): boolean => {
+export const emit = (type: string, params?: any): boolean => {
   if (exist(type)) {
-    msg.emit(type, event);
+    msg.emit(type, params);
     return true;
   }
   return false;
