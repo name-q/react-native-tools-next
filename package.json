@@ -14,7 +14,7 @@
     "dayjs": ">=1.11.7"
   },
   "devDependencies": {
-    "@microsoft/api-extractor": "^7.33.7",
+    "@microsoft/api-extractor": "^7.34.0",
     "@react-navigation/native": "^6.0.8",
     "@testing-library/react-hooks": "^8.0.0",
     "@types/jest": "^27.5.1",
