@@ -24,7 +24,7 @@ yarn add react-native-permissions mitt dayjs
 
 | 安装包                  | 版本号 | react-native 版本号 |
 | ----------------------- | ------ | ------------------- |
-| react-native-tools-next | 2.2.0+ | 0.65.0+             |
+| react-native-tools-next | 2.2.1+ | 0.65.0+             |
 
 ### 如何使用
 
