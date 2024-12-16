@@ -13,7 +13,7 @@ import { useNavigation } from '@react-navigation/native';
  */
 export default function useShow(fn: () => void): void {
   const navigation = useNavigation();
-  const AppStateRef = useRef<NativeEventSubscription>();
+  const AppStateRef = useRef<NativeEventSubscription | null>(null);
   const isAppStateChangeRef = useRef(false);
 
   const onChange = useCallback(
